@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Puji Sulaiman TI 2B</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f4f4f9; padding: 20px; }
+        .container { background: white; max-width: 800px; margin: auto; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        h2 { text-align: center; color: #2c3e50; }
+        table { width: 100%; border-collapse: collapse; }
+        td { padding: 10px; vertical-align: top; }
+        .label-column { width: 30%; font-weight: bold; }
+        input[type="text"], input[type="email"], input[type="number"], input[type="date"], select, textarea {
+            width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;
+        }
+        .header-graphics { text-align: center; margin-bottom: 20px; }
+        .btn-submit { background-color: #27ae60; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; font-size: 16px; }
+        .btn-reset { background-color: rgb(222, 123, 37); color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header-graphics">
+        <svg width="100" height="100" viewBox="0 0 100 100">
+            <circle cx="50" cy="50" r="45" stroke="#2c3e50" stroke-width="2" fill="#ecf0f1" />
+            <text x="50%" y="55%" text-anchor="middle" fill="#2c3e50" font-size="12" font-weight="bold">CSC</text>
+            <path d="M30 70 Q 50 90 70 70" stroke="#e67e22" stroke-width="3" fill="transparent"/>
+        </svg>
+        <h2>Formulir Pendaftaran Calon Anggota</h2>
+        <h4>Politeknik Negeri Jakarta<h4></h4>
+    </div>
+
+    <div style="text-align: center; margin-bottom: 20px;">
+        <canvas id="canvasBanner" width="400" height="50" style="border:1px solid #ddd; border-radius: 5px;"></canvas>
+    </div>
+
+    <form action="#" method="post" enctype="multipart/form-data">
+        <table>
+            <tr>
+                <td class="label-column"><label for="nama">Nama Lengkap</label></td>
+                <td><input type="text" id="nama" name="nama" placeholder="Masukkan nama sesuai KTM" required></td>
+            </tr>
+
+            <tr>
+                <td class="label-column"><label for="email">Email PNJ</label></td>
+                <td><input type="email" id="email" name="email" required></td>
+            </tr>
+
+            <tr>
+                <td class="label-column"><label for="nim">NIM</label></td>
+                <td><input type="number" id="nim" name="nim"></td>
+            </tr>
+
+            <tr>
+                <td class="label-column"><label for="tgl_lahir">Tanggal Lahir</label></td>
+                <td><input type="date" id="tgl_lahir" name="tgl_lahir"></td>
+            </tr>
+
+            <tr>
+                <td class="label-column"><label for="prodi">Program Studi</label></td>
+                <td>
+                    <select id="prodi" name="prodi">
+                        <option value="ti">Teknik Informatika</option>
+                        <option value="si">Teknik Multimedia Digital</option>
+                        <option value="tk">Teknik Multimedia Jaringan</option>
+                    </select>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="label-column">Jenis Kelamin</td>
+                <td>
+                    <input type="radio" id="lk" name="jk" value="Laki-laki"> <label for="lk">Laki-laki</label>
+                    <input type="radio" id="pr" name="jk" value="Perempuan"> <label for="pr">Perempuan</label>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="label-column">Minat / Divisi</td>
+                <td>
+                    <input type="checkbox" id="web" name="minat" value="Web"> <label for="web">Web Dev</label><br>
+                    <input type="checkbox" id="cyber" name="minat" value="Cyber"> <label for="cyber">Cyber Security</label><br>
+                    <input type="checkbox" id="design" name="minat" value="Design"> <label for="design">UI/UX Design</label>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="label-column"><label for="foto">Upload Foto KTM</label></td>
+                <td><input type="file" id="foto" name="foto"></td>
+            </tr>
+
+            <tr>
+                <td class="label-column"><label for="motivasi">Motivasi Bergabung</label></td>
+                <td><textarea id="motivasi" name="motivasi" rows="4" placeholder="Ceritakan alasanmu..."></textarea></td>
+            </tr>
+
+            <tr>
+                <td class="label-column"><label for="skill">Tingkat Skill IT (1-100)</label></td>
+                <td><input type="range" id="skill" name="skill" min="1" max="100"></td>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td>
+                    <input type="submit" class="btn-submit" value="Daftar Sekarang">
+                    <input type="reset" class="btn-reset" value="Kosongkan">
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+
+<script>
+    const canvas = document.getElementById('canvasBanner');
+    const ctx = canvas.getContext('2d');
+    ctx.fillStyle = "#2c3e50";
+    ctx.font = "20px Arial";
+    ctx.fillText("Join Our Technology Community!", 50, 32);
+</script>
+
+</body>
+</html>
